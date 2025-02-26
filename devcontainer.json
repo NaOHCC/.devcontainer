@@ -1,0 +1,65 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+    "name": "project",
+    // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/conda:1": {
+            "addCondaForge": true,
+            "version": "latest"
+        },
+        // "ghcr.io/nils-geistmann/devcontainers-features/create-remote-user:0": {
+        //     "create": true,
+        //     "addToSudo": true,
+        //     "installSudo": true
+        // },
+        "ghcr.io/va-h/devcontainers-features/uv:1": {
+            "shellautocompletion": true,
+            "version": "latest"
+        }
+    },
+    "runArgs": [
+        "--gpus",
+        "all",
+        "--cap-add=SYS_PTRACE",
+        "--privileged"
+    ],
+    "mounts": [
+        {
+            "source": "/data",
+            "target": "/data",
+            "type": "bind"
+        }
+    ],
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "dotfiles.repository": "https://github.com/NaOHCC/dotfiles.git"
+            },
+            "extensions": [
+                "eamodio.gitlens",
+                "github.copilot",
+                "github.copilot-chat",
+                "intellsmi.comment-translate",
+                "ms-python.debugpy",
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-vscode.cmake-tools",
+                "omnilib.ufmt",
+                "twxs.cmake"
+            ]
+        }
+    },
+    // Features to add to the dev container. More info: https://containers.dev/features.
+    // "features": {},
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // "forwardPorts": [],
+    // Use 'postCreateCommand' to run commands after the container is created.
+    // "postCreateCommand": "uname -a",
+    // Configure tool-specific properties.
+    // "customizations": {},
+    // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+}
