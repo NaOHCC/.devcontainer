@@ -7,10 +7,10 @@
         "dockerfile": "Dockerfile"
     },
     "features": {
-        "ghcr.io/devcontainers/features/conda:2": {
-            "addCondaForge": true,
-            "version": "latest"
-        },
+        // "ghcr.io/devcontainers/features/conda:2": {
+        //     "addCondaForge": true,
+        //     "version": "latest"
+        // },
         // "ghcr.io/nils-geistmann/devcontainers-features/create-remote-user:0": {
         //     "create": true,
         //     "addToSudo": true,
