@@ -25,14 +25,15 @@
         "--gpus",
         "all",
         "--cap-add=SYS_PTRACE",
+        "--cap-add=SYS_ADMIN",
         "--privileged"
     ],
     "mounts": [
-        {
-            "source": "/data",
-            "target": "/data",
-            "type": "bind"
-        }
+        // {
+        //     "source": "/data",
+        //     "target": "/data",
+        //     "type": "bind"
+        // }
     ],
     "customizations": {
         "vscode": {
@@ -49,7 +50,6 @@
                 "ms-python.vscode-pylance",
                 "ms-vscode.cmake-tools",
                 "omnilib.ufmt",
-                "twxs.cmake"
             ]
         }
     },
