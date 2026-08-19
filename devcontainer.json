@@ -16,14 +16,20 @@
         //     "addToSudo": true,
         //     "installSudo": true
         // },
-        "ghcr.io/va-h/devcontainers-features/uv:1": {
-            "shellautocompletion": true,
-            "version": "latest"
-        }
+        // "ghcr.io/va-h/devcontainers-features/uv:1": {
+        //     "shellautocompletion": true,
+        //     "version": "latest"
+        // }
+    },
+    "containerEnv": {
+        "http_proxy": "${localEnv:http_proxy}",
+        "https_proxy": "${localEnv:https_proxy}",
+        "no_proxy": "${localEnv:no_proxy}"
     },
     "runArgs": [
-        "--gpus",
-        "all",
+        // "--gpus",
+        // "all",
+        "--device=/dev/dri",
         "--cap-add=SYS_PTRACE",
         "--cap-add=SYS_ADMIN",
         "--privileged"
