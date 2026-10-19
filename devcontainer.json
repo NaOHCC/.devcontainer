@@ -4,7 +4,12 @@
     "name": "project",
     // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
     "build": {
-        "dockerfile": "Dockerfile"
+        "dockerfile": "Dockerfile",
+        "args": {
+            "http_proxy": "${localEnv:http_proxy}",
+            "https_proxy": "${localEnv:https_proxy}",
+            "no_proxy": "${localEnv:no_proxy}"
+        }
     },
     "features": {
         // "ghcr.io/devcontainers/features/conda:2": {
@@ -21,11 +26,11 @@
         //     "version": "latest"
         // }
     },
-    "containerEnv": {
-        "http_proxy": "${localEnv:http_proxy}",
-        "https_proxy": "${localEnv:https_proxy}",
-        "no_proxy": "${localEnv:no_proxy}"
-    },
+    // "containerEnv": {
+    //     "http_proxy": "${localEnv:http_proxy}",
+    //     "https_proxy": "${localEnv:https_proxy}",
+    //     "no_proxy": "${localEnv:no_proxy}"
+    // },
     "runArgs": [
         // "--gpus",
         // "all",
